@@ -8,6 +8,8 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
+//correção de commit 
+
 @Entity 
 @Table (name= "Usuário")
 public class Usuario {
