@@ -5,7 +5,10 @@ import java.util.Date;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinTable;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.Table;
 
 //correção de commit 
@@ -14,7 +17,7 @@ import jakarta.persistence.Table;
 @Table (name= "Usuário")
 public class Usuario {
     @Id
-    GeneratedValue(strategy=GenerationType.IDENTITY)
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
     @Column (name= "id")
     private Integer id;
 
@@ -27,5 +30,11 @@ public class Usuario {
     @Column (name= "data_de_nascimento")
     private Date data_de_nascimento;
 
-    
 }
+
+@ManyToMany 
+@JoinTable (
+    name = "usuario_curso",
+    
+
+)

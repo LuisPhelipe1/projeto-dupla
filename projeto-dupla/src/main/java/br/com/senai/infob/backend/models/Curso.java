@@ -1,10 +1,12 @@
 package br.com.senai.infob.backend.models;
 
 import java.time.LocalDate;
-import java.util.jar.Attributes;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 //
@@ -14,7 +16,7 @@ public class Curso {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     @Column (name= "nome")
-    private integer nome;
+    private Integer nome;
 
     @Column (name= "descrição")
     private String descrição;
