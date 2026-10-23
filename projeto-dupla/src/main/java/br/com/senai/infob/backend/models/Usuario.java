@@ -7,11 +7,12 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.Table;
 
-//correção de commit 
+ 
 
 @Entity 
 @Table (name= "Usuário")
@@ -35,6 +36,19 @@ public class Usuario {
 @ManyToMany 
 @JoinTable (
     name = "usuario_curso",
-    
-
+    joinColumns = @JoinColumn (name = "usuario_id", referencedColumnName = "id"),
+    inverseJoinColumns = @JoinColumn (name = "curso_id", referencedColumnName  = "id")
 )
+
+private List <Curso> curso;
+
+public Usuario() {
+}
+
+public Usuario(Integer id, String nome, String cpf, Date data_de_nascimento, List<Curso> curso) {
+    this.id = id;
+    this.nome = nome;
+    this.cpf = cpf;
+    this.data_de_nascimento = data_de_nascimento;
+    this.curso = curso;
+}
